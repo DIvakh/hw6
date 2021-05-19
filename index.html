@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW6</title>
+  </head>
+  <body>
+    <script>
+      // Creating an object:
+      var obj = {
+        firstname: "Dmitry",
+        lastname: "Ivakh",
+        dateOfBirth: "25.02.1993",
+        course: "Front-End Pro",
+      };
+
+      // **** TASKS ****
+
+      // 1. cloneObj(obj) // вернет копию объекта
+      function cloneObj(obj) {
+        var newObj = {};
+        for (var key in obj) {
+          newObj[key] = obj[key];
+        }
+        return newObj;
+      }
+      console.log(obj);
+      console.log(cloneObj(obj));
+
+      // 2. getValues(obj, separator) // вернет строку, в кот каждое значение перечислено через разделитель
+      function getValues(obj, separator) {
+        var result = "";
+        for (var values in obj) {
+          result += obj[values] + separator;
+        }
+        return result;
+      }
+      console.log(getValues(obj, ", "));
+
+      // 3. getKeys(obj, separator) // вернет строку, в кот каждый ключ перечислен через разделитель
+      function getKeys(obj, separator) {
+        var result = "";
+        for (var key in obj) {
+          result += key + separator;
+        }
+        return result;
+      }
+      console.log(getKeys(obj, ", "));
+
+      // 4. getEntries(obj) // вернет строку, в кот каждая пара ключ: значение указаны с новой строки
+
+      function getEntries(obj) {
+        var result = "";
+        for (var i in obj) {
+          if (obj.hasOwnProperty(i)) {
+            result += i + " : " + obj[i] + ";" + "\n";
+          }
+        }
+        return result;
+      }
+      console.log(getEntries(obj));
+    </script>
+  </body>
+</html>
