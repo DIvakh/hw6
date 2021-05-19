@@ -19,13 +19,14 @@
       // **** TASKS ****
 
       // 1. cloneObj(obj) // вернет копию объекта
+      var newObj = {};
       function cloneObj(obj) {
-        var newObj = {};
         for (var key in obj) {
           newObj[key] = obj[key];
         }
         return newObj;
       }
+      newObj.hobby = "guitars"; // <= Добавил новое свойство, чтобы было видно, что обьект клонирован
       console.log(obj);
       console.log(cloneObj(obj));
 
